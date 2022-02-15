@@ -214,7 +214,7 @@ namespace Microsoft.Exchange.WebServices.Data
                 return serviceCredentials;
 
             var networkCredentials = ((WebCredentials)serviceCredentials).Credentials as NetworkCredential;
-            if (networkCredentials != null)
+            if (url != null && networkCredentials != null)
             {
                 CredentialCache credentialCache = new CredentialCache();
                 credentialCache.Add(url, "NTLM", networkCredentials);
